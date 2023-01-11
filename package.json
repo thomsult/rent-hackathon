@@ -6,12 +6,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "bluebird": "^3.7.2",
+    "mysql2": "^2.3.3",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "swr": "^2.0.0",
-    "bluebird": "^3.7.2",
-    "mysql2": "^2.3.3"
+    "react-hook-form": "^7.41.5",
+    "swr": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
