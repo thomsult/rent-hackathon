@@ -6,12 +6,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "argon2": "^0.30.3",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "swr": "^2.0.0",
-    "bluebird": "^3.7.2",
-    "mysql2": "^2.3.3"
+    "swr": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
