@@ -1,10 +1,9 @@
-import React from "react";  
+import { useEffect, useState } from "react";
+import React from "react"
+import Home from './Home';
+export default function App() {
 
-
-export default function index() {
   return (
-    <h1 className="text-3xl font-bold underline">
-        Hackathon
-      </h1>
-  )
+    <Home/>
+  );
 }
