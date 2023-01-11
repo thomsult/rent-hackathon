@@ -4,8 +4,7 @@ import DatePicker from '../components/datePicker';
 export default function Home() {
   return (
 <div>
-    hgdcghh
-    <DatePicker/>
+  <DatePicker/>
 </div>
   )
 }
