@@ -1,10 +1,24 @@
-import React from "react";  
+import { useEffect, useState } from "react";
+import React from "react"
+export default function Home() {
+  const [dataResponse, setdataResponse] = useState([]);
 
-
-export default function index() {
+  useEffect(() => {
+    async function getPageData() {
+      const apiUrlEndpoint = `http://localhost:3000/api/getdata-lib`;
+      const response = await fetch(apiUrlEndpoint);
+      const res = await response.json();
+      setdataResponse(res.data);
+    }
+    getPageData();
+  }, []);
   return (
-    <h1 className="text-3xl font-bold underline">
-        Hackathon
-      </h1>
-  )
+    <div>
+       {dataResponse.map((item,items) => {
+        return (
+          <h1 key={items}>{item.email}</h1>
+        );
+      })}
+    </div>
+  );
 }
