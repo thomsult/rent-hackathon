@@ -13,7 +13,7 @@ export default function Aside() {
 
 
         <aside className=" hidden md:flex shadow-xl border-r border-gray-300 mr-4 mt-8">
-            <nav className="md:flex  flex-col xl:w-screen h-screen  xl:max-w-[18em]">
+            <nav className="md:flex  flex-col xl:w-screen h-screen  xl:max-w-[18em] min-w-[15em]">
             {fieldset.map((item)=>{
               return <fieldset key={item.name} className="pl-4 space-y-2 mt-1">
                 <legend className="">{item.name}</legend>
