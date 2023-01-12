@@ -4,8 +4,13 @@ import  Image  from 'next/image';
 import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
+<<<<<<< HEAD
 import NavBar from '../components/navbar';
 import axios from 'axios';
+=======
+import CitySelector from '../components/CitySelector';
+import axios from "axios";
+>>>>>>> c964fbcbb862b3820159bc5512287100258cb7e4
 
 
 export default function Home() {
@@ -50,7 +55,7 @@ axios
       />
     </div>
     
-    <div className=" mx-10 mt-10 md:absolute bg-slate-100 p-4 top-0 md:translate-y-[40vw] lg:translate-y-[40vh] ">
+    <div className="flex flex-row">
       <DatePicker/>
     </div>
     </div>
@@ -73,3 +78,4 @@ axios
 </main>
   )
 }
+// rounded-md bg-red-500 mx-10 mt-10 md:absolute bg-slate-100 p-4 top-0 md:translate-y-[40vw] lg:translate-y-[40vh]
