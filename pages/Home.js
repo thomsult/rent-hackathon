@@ -40,7 +40,7 @@ axios
 
     <div className="flex max-h-44 relative">
       <img
-      className="w-full object-cover max-h-[33%] bg-[-15rem] absolute " 
+        className="w-full object-cover max-h-[33%] bg-[-15rem] absolute " 
         src="/Home_Image.png"
         alt="Picture of the author"
       />
