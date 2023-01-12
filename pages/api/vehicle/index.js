@@ -3,7 +3,6 @@ import { query } from "../../../lib/db";
 import { RemoveKeyInArray } from "../../../lib/utils";
 
 export default async function handler(req, res) {
-  console.log(req.method);
   if (req.method === "POST") {
     post(req, res);
   } else {

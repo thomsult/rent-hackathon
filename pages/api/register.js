@@ -14,18 +14,17 @@ export default async function handler(req, res) {
     const values = [
       req.body.first_name,
       req.body.last_name,
-      req.body.address,
+      req.body.address ||null,
       req.body.email,
       hashedPassword,
-      req.body.phone,
-      req.body.license_number,
-      req.body.role,
+      req.body.phone ||null,
+      req.body.license_number ||null,
+      req.body.role ||"user",
     ];
-    query({ query: querySql, values: values }).then((data) => {
-      res.status(200).json(data);
-    });
+    const data = await query({ query: querySql, values: values })
+    res.status(200).json(data);
   } catch (error) {
     // unhide to check error
-    // res.status(500).json({ error: error.message });
+     res.status(500).json({ error: error.message });
   }
 }

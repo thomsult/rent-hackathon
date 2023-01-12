@@ -8,7 +8,7 @@ import NavBar from '../components/navbar';
 import axios from "axios";
 
 
-export default function Home() {
+export default function Home({props}) {
 
   const [data, setData] = useState([])
   const [Selected, setSelected] = useState([])
@@ -27,7 +27,7 @@ axios
 });
 
 }, [])
-
+console.log(props)
   return (
 <main className="flex flex-col relative ">
 <NavBar />

@@ -1,17 +1,27 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import PublicLayout from '../components/PublicLayout'
 import { useForm } from "react-hook-form";
  import axios from "axios"
-
+ import { useRouter } from 'next/router'
 import Link from 'next/link'
+import UserContext from '../context/UserContext';
+
 export default function login() {
+  const {user, setUser} = useContext(UserContext)
+  const router = useRouter()
+
   const { register, handleSubmit, setValue,formState: { errors } ,watch} = useForm({
     defaultValues: {
       email: '',
       password: '',
     }
   });
-  const onSubmit = data => axios.post("http://localhost:3000/api/login",data).then((res)=>console.log(res.data));
+  const onSubmit = data => axios.post("http://localhost:3000/api/login",data).then((res)=>{
+    setUser(res.data[0])
+    console.log(res.data[0])
+    router.push("/")
+
+  });
 
   return (
     <PublicLayout children={undefined}>
