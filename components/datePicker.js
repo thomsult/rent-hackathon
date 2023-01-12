@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
+import Datepicker from 'flowbite-datepicker/Datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function DateRangePicker() {
