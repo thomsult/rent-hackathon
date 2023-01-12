@@ -4,9 +4,9 @@ import { usePosition } from 'react-geolocated';
 function CitySelector() {
   const [currentCity, setCurrentCity] = useState('');
   const [cityOptions, setCityOptions] = useState([]);
-  const [
+  const {
     coords: { latitude, longitude }
-   ] = usePosition();
+  } = usePosition();
 
   useEffect(() => {
     if (latitude && longitude) {
