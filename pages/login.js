@@ -1,6 +1,7 @@
 import React from 'react'
 import PublicLayout from '../components/PublicLayout'
 import { useForm } from "react-hook-form";
+ import axios from "axios"
 
 import Link from 'next/link'
 export default function login() {
@@ -10,7 +11,7 @@ export default function login() {
       password: '',
     }
   });
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => axios.post("http://localhost:3000/api/login",data).then((res)=>console.log(res.data));
 
   return (
     <PublicLayout children={undefined}>
