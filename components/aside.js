@@ -1,22 +1,4 @@
 import React from 'react'
-/* T Y P E
-Sport  (10)
-SUV  (12)
-MPV  (16)
-Sedan  (20)
-Coupe  (14)
-Hatchback  (14)
-C A P A C I T Y
-2 Person  (10)
-4 Person  (14)
-6 Person  (12)
-8 or More  (16)
-D O O R S
-5 Doors(10)
-4  Doors  (14)
-P R I C E
-Max. 100.00€ */
-
 
 export default function Aside() {
   const fieldset = [
@@ -30,14 +12,14 @@ export default function Aside() {
 
 
 
-        <aside className="shadow-xl border-r border-gray-300 mr-4 mt-8">
-            <nav className=" hidden md:flex  flex-col xl:w-screen h-screen  xl:max-w-[18em]">
+        <aside className=" hidden md:flex shadow-xl border-r border-gray-300 mr-4 mt-8">
+            <nav className="md:flex  flex-col xl:w-screen h-screen  xl:max-w-[18em]">
             {fieldset.map((item)=>{
-              return <fieldset className="pl-4 space-y-2 mt-1">
+              return <fieldset key={item.name} className="pl-4 space-y-2 mt-1">
                 <legend className="">{item.name}</legend>
                 {item.value.map((inp)=>{
                   return (
-                    <div className="pl-2 flex items-start py-0">
+                    <div key={inp} className="pl-2 flex items-start py-0">
                     <div className="flex items-center h-5">
                       <input
                         id={inp}

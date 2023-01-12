@@ -2,8 +2,10 @@ import React from 'react';
 import DatePicker from '../components/datePicker';
 import  Image  from 'next/image';
 import {CarsCard} from '../components/Card/CarsCard';
-import Footer from '../components/footer';
+import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
+import Footer from '../components/footer';
+
 
 export default function Home() {
   const data = [{name:"cars"}]
@@ -18,6 +20,7 @@ export default function Home() {
         alt="Picture of the author"
       />
     </div>
+
     <div className="hidden md:flex max-h-[95vh] ">
       <img
       className="w-full object-cover object-center" 
@@ -25,17 +28,20 @@ export default function Home() {
         alt="Picture of the author"
       />
     </div>
+    
     <div className=" mx-10 mt-10 md:absolute bg-slate-100 p-4 top-0 md:translate-y-[40vw] lg:translate-y-[40vh] ">
       <DatePicker/>
     </div>
     </div>
     
-    <section className="h-full  mt-4  min-h-screen flex flex-row">
+    <section className="h-full mx-8 md:mx-3  mt-4  min-h-screen flex flex-row">
     <Aside/>
-    <div><h2 className="text-3xl font-medium mt-4">Available Cars</h2>
-    {data.map((item,index)=><CarsCard key={index} vehicule={item}></CarsCard>)}</div>
-    </section>
-    <Footer/>
+    <div className="flex flex-col"><h2 className="text-3xl font-medium mt-4">Available Cars</h2>
+    {data.map((item,index)=><CarsCard key={index} vehicule={item}></CarsCard>)}
+    {data.map((item)=><CarsCardBig vehicule={item}></CarsCardBig>)}
+    </div></section>
+    
+<Footer/>
 </main>
   )
 }
