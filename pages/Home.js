@@ -1,10 +1,11 @@
 import React from 'react';
-import DatePicker from '../components/datePicker';
+import DatePicker from '../components/DatePicker';
 import  Image  from 'next/image';
 import {CarsCard} from '../components/Card/CarsCard';
 import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
+import CitySelector from '../components/CitySelector';
 
 
 export default function Home() {
@@ -29,7 +30,8 @@ export default function Home() {
       />
     </div>
     
-    <div className=" mx-10 mt-10 md:absolute bg-slate-100 p-4 top-0 md:translate-y-[40vw] lg:translate-y-[40vh] ">
+    <div className="flex-row">
+      <CitySelector/>
       <DatePicker/>
     </div>
     </div>
@@ -45,3 +47,4 @@ export default function Home() {
 </main>
   )
 }
+// rounded-md bg-red-500 mx-10 mt-10 md:absolute bg-slate-100 p-4 top-0 md:translate-y-[40vw] lg:translate-y-[40vh]

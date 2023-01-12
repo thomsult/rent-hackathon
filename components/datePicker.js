@@ -7,8 +7,10 @@ function DateRangePicker() {
   const [endDate, setEndDate] = useState(new Date());
 
   return (
-    <div>
-      <DatePicker
+    <div className="px-10 py-10 mt-5 mr-5 ml-5 max-w-screen flex items-start min-w-screen justify-start">
+      <h1>Pick up date and time </h1>
+      {/* <span>from</span> */}
+      <DatePicker className='rounded-md'
         selected={startDate}
         onChange={date => setStartDate(date)}
         selectsStart
@@ -16,8 +18,8 @@ function DateRangePicker() {
         endDate={endDate}
         placeholderText="Select start date"
       />
-      <span> to </span>
-      <DatePicker
+   
+      <DatePicker className='rounded-md'
         selected={endDate}
         onChange={date => setEndDate(date)}
         selectsEnd
