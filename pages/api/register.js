@@ -5,7 +5,6 @@ import { query } from "../../lib/db";
 export default async function handler(req, res) {
   const salt = bcrypt.genSaltSync(10);
   const hashedPassword = bcrypt.hashSync(req.body.password, salt);
-  console.log(req.body, hashedPassword);
 
   try {
     const querySql =
