@@ -114,15 +114,6 @@ export default function Aside() {
               }
             </fieldset>
           })}
-
-        <fieldset className="py-2 ml-2 ">
-          <legend>PRICE</legend>
-
-          <div className="p-2  flex flex-col items-center">
-            <input id="small-range" type="range" className="w-4/5 h-2 mb-6 bg-blue-600 rounded-full appearance-none cursor-pointer range-sm" />
-            <p className="self-start">Max. 100.00€</p>
-          </div>
-        </fieldset>
       </nav>
 
     </aside>

@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const values = [req.body.email];
     query({ query: querySql, values: values }).then((data) => {
       if (data.length === 0) {
-        return res.status(404).json({ error: "User not found" });
+        res.status(404).json({ error: "User not found" });
       }
       const salt = bcrypt.genSaltSync(10);
       const hashedPassword = bcrypt.hashSync(req.body.password, salt);
@@ -20,10 +20,9 @@ export default async function handler(req, res) {
         data[0].hashedPassword
       );
       if (!checkPassword)
-        return res.status(400).json({ error: "Wrong password or username!" });
+        res.status(400).json({ error: "Wrong password or username!" });
 
       res.status(200).json(data);
-      return;
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
