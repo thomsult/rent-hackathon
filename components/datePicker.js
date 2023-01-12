@@ -7,35 +7,41 @@ function DateRangePicker() {
   const [endDate, setEndDate] = useState(new Date());
 
   return (
-    <div className="pt-4 pb-4 bg-orange-300 md:px-8 py-18 mt-5 mr-5 ml-5 max-w-screen flex flex-col items-start min-w-screen justify-start lg:flex-row">
-    
-      <h1>Pick up date and time </h1>
-      {/* <span>from</span> */}
-      <DatePicker className='rounded-md'
-        selected={startDate}
-        onChange={date => setStartDate(date)}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-        placeholderText="Select start date"
-      />
+    <div className="w-full text-white bg-black md:pt-4 pb-4 px-8 py-18 mt-5 mr-5 ml-5 rounded-md flex flex-col max-w-screen items-center min-w-screen justify-between lg:flex-row">
+      <div>
+        <h1>Debut date</h1>
+        {/* <span>from</span> */}
+        <DatePicker className='rounded-md md:mt-5 mb-5 text-black'
+          selected={startDate}
+          onChange={date => setStartDate(date)}
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+          placeholderText="Select start date"
+        />
+      </div>
    
-      <DatePicker className='rounded-md'
+      <div> 
+        <h1>End date</h1>
+        <DatePicker className='rounded-md md:mt-5 mb-5 text-black'
         selected={endDate}
         onChange={date => setEndDate(date)}
         selectsEnd
         startDate={startDate}
         endDate={endDate}
         placeholderText="Select end date"
-      />
-      <span>
-        Time 
-      </span>
-      <input className="rounded-md" type="text" placeholder="Type the hour" required id="city" name="city" label="city" autoComplete="city"/>
-      <span>
-        City 
-      </span>
-      <input className="rounded-md" type="text" placeholder="Type your city" required id="city" name="city" label="city" autoComplete="city"/>
+        />
+      </div>
+      <div>
+        <h1>
+          Time 
+        </h1>
+        <input className='rounded-md md:mt-5 mb-5 text-black' type="text" placeholder="Type the hour" required id="city" name="city" label="city" autoComplete="city"/>
+      </div>
+      <div>
+        <h1>City</h1>
+        <input className='rounded-md md:mt-5 mb-5 text-black' type="text" placeholder="Type your city" required id="city" name="city" label="city" autoComplete="city"/>
+      </div>
     </div>
   );
 }
