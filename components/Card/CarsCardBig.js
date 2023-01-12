@@ -6,13 +6,13 @@ export function CarsCardBig({ vh }) {
   return (
     <>
       <div className="hidden sm:block">
-        <div className="h-full w-full lg:max-w-xs lg:max-h-[25em] py-4 rounded-xl bg-white px-4 shadow-xl">
+        <div className="h-full w-full lg:max-w-xs lg:max-h-[30em] py-4 rounded-xl bg-white px-4 shadow-xl">
           <div>
             <h1 className=" text-xl font-bold text-[#555555]">
               {vh.brand} {vh.model}
             </h1>
             <h2 className="text-lg font-medium text-[#6f6d6d]">
-              {vh.details}
+              {vh.detail}
             </h2>
             <div className="">
               <img
@@ -61,8 +61,8 @@ export function CarsCardBig({ vh }) {
       <div className="sm:hidden block w-full">
         <div className="py-4 px-4 w-full border-solid border-2  border-[green] rounded-xl bg-white relative">
           <div>
-            <h1 className=" text-xl font-bold text-[#555555]">{vh.brand}</h1>
-            <h2 className="text-lg font-medium text-[#6f6d6d]">{vh.model}</h2>
+            <h1 className=" text-xl font-bold text-[#555555]">{vh.brand} {vh.model}</h1>
+            <h2 className="text-lg font-medium text-[#6f6d6d]">{vh.detail}</h2>
             <div className="flex mt-4">
               <Battery100Icon className="h-6 w-6" />{" "}
               <h3 className="text-md font-medium text-[#555555] ml-1">

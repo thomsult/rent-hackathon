@@ -28,7 +28,6 @@ axios
 
 
 
-
   return (
 <main className="h-screen flex flex-col relative">
   <nav className="bg-yellow-500 p-6 px-10 w-full">Najim</nav>
