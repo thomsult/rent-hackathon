@@ -31,8 +31,8 @@ axios
 <main className="flex flex-col relative ">
 <NavBar />
   <div className="mt-10 md:mt-0">
-    <div className="flex phone:hidden w-full max-h-64 overflow-hidden">
-      <img className="bg-cover md:h-full rounded-lg object-cover object-bottom " 
+    <div className="flex w-full max-h-64 overflow-hidden phone:hidden">
+      <img className="bg-cover md:h-full object-cover object-bottom " 
         src="/Home_Image.png"
         alt="Picture of the author"
       />
@@ -69,5 +69,3 @@ axios
 </main>
   )
 }
-// rounded-md bg-red-500 mx-10 mt-10 md:absolute bg-slate-100 p-4 top-0 md:translate-y-[40vw] lg:translate-y-[40vh]
-// caractéristiques image background: md:h-full rounded-lg object-cover object-bottom
