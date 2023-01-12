@@ -32,15 +32,10 @@ axios
 <main className="h-screen flex flex-col relative ">
 <NavBar />
   <div className="mt-10 md:mt-0">
-    <div className="flex md:hidden w-full max-h-64 overflow-hidden">
-      <img
-      className="bg-cover md:h-full rounded-lg object-cover object-bottom lg:" 
-        src="/Home_Image.png"
-        alt="Picture of the author"
-      />
+    <div className="flex md:hidden w-full max-h-24-overflow-hidden">
     </div>
 
-    <div className="hidden md:flex max-h-[95vh] ">
+    <div className="md:hidden md:flex bg-">
       <img
       className="w-full object-cover object-center max-h-[33%]" 
         src="/Home_Image.png"
