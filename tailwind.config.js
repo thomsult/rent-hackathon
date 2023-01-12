@@ -5,10 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-    screens: {
-      'phone': '400px',
-    }
+    extend: {
+      screens: {
+        phone: "380px",
+        laptop: "1024px",
+      },
+    } 
   },
   plugins: 
   [require('flowbite/plugin')
