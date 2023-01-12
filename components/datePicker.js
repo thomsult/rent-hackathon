@@ -1,14 +1,32 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
+function DateRangePicker() {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
-function datePicker(){
-    const [date, setDate] = useState();
-    console.log("Date" ,date);
-    return(
-        <>
-        <h1>Select a date: {date} </h1>
-         <input type="date" onChange={e=>setDate(e.target.value)}/>
-        </>
-    )
+  return (
+    <div>
+      <DatePicker
+        selected={startDate}
+        onChange={date => setStartDate(date)}
+        selectsStart
+        startDate={startDate}
+        endDate={endDate}
+        placeholderText="Select start date"
+      />
+      <span> to </span>
+      <DatePicker
+        selected={endDate}
+        onChange={date => setEndDate(date)}
+        selectsEnd
+        startDate={startDate}
+        endDate={endDate}
+        placeholderText="Select end date"
+      />
+    </div>
+  );
 }
-export default datePicker;
+
+export default DateRangePicker;

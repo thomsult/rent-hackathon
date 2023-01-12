@@ -6,10 +6,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.13",
+    "axios": "^1.2.2",
     "bluebird": "^3.7.2",
+    "flowbite": "^1.6.1",
+    "flowbite-datepicker": "^1.2.2",
+    "flowbite-react": "^0.3.7",
     "mysql2": "^2.3.3",
     "next": "latest",
     "react": "18.2.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.41.5",
     "swr": "^2.0.0"
