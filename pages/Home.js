@@ -33,7 +33,7 @@ console.log(props)
 <NavBar />
   <div className="mt-10 md:mt-0">
     <div className="flex phone:hidden w-full max-h-64 overflow-hidden">
-      <img className="bg-cover md:h-full rounded-lg object-cover object-bottom " 
+      <img className="bg-cover md:h-full lg:rounded-md object-cover object-bottom " 
         src="/Home_Image.png"
         alt="Picture of the author"
       />

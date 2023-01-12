@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import Link from "next/link";
+
 
 function DateRangePicker() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
+
   return (
-    <div className="w-full text-white bg-black md:pt-4 pb-4 px-8 py-18 mt-5 mr-5 ml-5 rounded-md flex flex-col max-w-screen items-center min-w-screen justify-between lg:flex-row">
+    <div className="w-full text-white bg-black md:pt-4 pb-4 px-8 py-4 mt-5 lg:rounded-md flex flex-col max-w-screen items-center min-w-screen justify-between lg:flex-row">
       <div>
         <h1>Start date</h1>
         {/* <span>from</span> */}
@@ -42,6 +45,7 @@ function DateRangePicker() {
         <h1>City</h1>
         <input className='rounded-md md:mt-5 mb-5 text-black' type="text" placeholder="Type your city" required id="city" name="city" label="city" autoComplete="city"/>
       </div>
+      <button className="2xl:bg-[#F3B33D] px-5 rounded-md max-h-[3em] xl: bg-[#F3B33D] px-5 rounded-md max-h-[3em] mt-6 bg-[#F3B33D] px-5 rounded-md max-h-[3em] md:bg-[#F3B33D] px-5 rounded-md max-h-[3em] sm: bg-[#F3B33D] px-5 py-3 rounded-md max-h-[3em]">See the cars</button>
     </div>
   );
 }
