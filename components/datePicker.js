@@ -7,7 +7,7 @@ function DateRangePicker() {
   const [endDate, setEndDate] = useState(new Date());
 
   return (
-    <div className="px-8 py-18 mt-5 mr-5 ml-5 max-w-screen flex items-start min-w-screen justify-start bg-red-500">
+    <div className="pt-4 pb-4 bg-orange-300 md:px-8 py-18 mt-5 mr-5 ml-5 max-w-screen flex flex-col items-start min-w-screen justify-start lg:flex-row">
     
       <h1>Pick up date and time </h1>
       {/* <span>from</span> */}
