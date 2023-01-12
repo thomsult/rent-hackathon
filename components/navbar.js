@@ -17,9 +17,9 @@ export default function NavBar(){
           <button type="button" class="bg-yellow-500 px-5 rounded-md max-h-[3em]"><span>Inscription</span></button>
           <>
           {isLoggedIn ? (
-          <button onClick={() => setIsLoggedIn(false)}  class="bg-yellow-500 px-5 rounded-md max-h-[3em]">Se connecter</button>
+          <button onClick={() => setIsLoggedIn(false)}  className="bg-yellow-500 px-5 rounded-md max-h-[3em]">Se connecter</button>
         ) : (
-          <button onClick={() => setIsLoggedIn(true)}  class="bg-yellow-500 px-5 rounded-md max-h-[3em]">Se deconnecter</button>
+          <button onClick={() => setIsLoggedIn(true)}  className="bg-yellow-500 px-5 rounded-md max-h-[3em]">Se deconnecter</button>
         )}
           </>
           </div>
