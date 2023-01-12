@@ -5,18 +5,19 @@ export default function Home() {
 
   useEffect(() => {
     async function getPageData() {
-      const apiUrlEndpoint = `http://localhost:3000/api/getdata-lib`;
+      const apiUrlEndpoint = `http://localhost:3000/api/vehicle`;
       const response = await fetch(apiUrlEndpoint);
       const res = await response.json();
-      setdataResponse(res.data);
+      setdataResponse(res);
+      console.log(res)
     }
     getPageData();
   }, []);
   return (
     <div>
-       {dataResponse.map((item,items) => {
+       {dataResponse && dataResponse.map((item,items) => {
         return (
-          <h1 key={items}>{item.email}</h1>
+          <h1 key={items}>{item.model}</h1>
         );
       })}
     </div>

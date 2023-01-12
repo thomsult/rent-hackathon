@@ -1,5 +1,4 @@
 import { query } from "../../../lib/db";
-import { useRouter } from 'next/router'
 
 export default async function handler(req, res) {
   
