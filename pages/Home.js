@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-import React from 'react';
-import DatePicker from '../components/DatePicker';
-=======
 import { React, useEffect, useState } from 'react';
 import DatePicker from '../components/datePicker';
->>>>>>> 43655f1234ef44f51ed444392e14d145329a0215
 import  Image  from 'next/image';
 import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
-<<<<<<< HEAD
 import CitySelector from '../components/CitySelector';
-=======
-import axios from 'axios';
->>>>>>> 43655f1234ef44f51ed444392e14d145329a0215
 
 
 export default function Home() {
