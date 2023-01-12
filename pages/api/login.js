@@ -1,5 +1,5 @@
+
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import { query } from "../../lib/db";
 
 // const SECRET_KEY = process.env.SECRET_KEY || "secretKey"; //replace this with your actual secret key
