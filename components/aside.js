@@ -4,46 +4,51 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
-export default function Aside() {
+
+const Checkbox = ({ inp,Checked }) => {
+  return <div key={inp} className="pl-2 flex items-start py-0">
+    <div className="flex items-center h-5">
+      <input
+        id={inp}
+        aria-describedby="comments-description"
+        name={inp}
+        type="checkbox"
+        onChange={(e)=>{
+          e.target.checked?Checked(e.target.name):Checked(null)}}
+        className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+      />
+    </div>
+    <div className="ml-3 text-sm h-7">
+      <label htmlFor={inp} className="font-medium text-gray-700">
+        {inp}
+      </label>
+    </div>
+  </div>
+}
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+
+const Slider = ({ inp }) => {
+  return (<div className="flex flex-col w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+  <p className="flex-1 text-left capitalize">{inp.name}</p>
+    <input id="small-range" type="range" className="w-4/5 mt-4 h-2 mb-6 bg-blue-600 rounded-full appearance-none cursor-pointer range-sm" />
+    <p className="self-start">Max. 100.00€</p>
+</div>)
+  
+  
+  
+}
+
+
+
+
+export default function Aside({onChange}) {
   const [data, setData] = useState(null)
   const [fieldset, SetFieldset] = useState(null)
 
 
-
-
-  const Checkbox = ({ inp }) => {
-    return <div key={inp} className="pl-2 flex items-start py-0">
-      <div className="flex items-center h-5">
-        <input
-          id={inp}
-          aria-describedby="comments-description"
-          name={inp}
-          type="checkbox"
-          className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-        />
-      </div>
-      <div className="ml-3 text-sm h-7">
-        <label htmlFor={inp} className="font-medium text-gray-700">
-          {inp}
-        </label>
-      </div>
-    </div>
-  }
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
-
-
-  const Slider = ({ inp }) => {
-    return (<div className="flex flex-col w-full rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
-    <p className="flex-1 text-left capitalize">{inp.name}</p>
-      <input id="small-range" type="range" className="w-4/5 mt-4 h-2 mb-6 bg-blue-600 rounded-full appearance-none cursor-pointer range-sm" />
-      <p className="self-start">Max. 100.00€</p>
- </div>)
-    
-    
-    
-  }
 
 
 
@@ -71,7 +76,7 @@ export default function Aside() {
         {fieldset
           .filter((el) => el.name !== "category_id")
           .map((item, index) => {
-            return <fieldset key={item.name} className="pl-4 space-y-2 mt-1">
+            return <fieldset key={index} className="pl-4 space-y-2 mt-1">
               {
                 item.type !== "Slider" ?(
                   <Menu as="div" className="inline-block text-left w-full">
@@ -93,9 +98,12 @@ export default function Aside() {
                     >
                       <Menu.Items className="origin-top-right  right-0 mt-2 w-full ">
                         <div className="py-4 ">
-                        {item.value.map((inp) => {
+                        {item.value.map((inp,index2) => {
                             if (item.type !== "Slider") {
-                              return <Checkbox inp={inp} />
+                              return <Checkbox key={index2} inp={inp} Checked={(e)=>{
+                                onChange({[item.name]:e})
+
+                              }}/>
 
 
 
