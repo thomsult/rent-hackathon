@@ -4,13 +4,9 @@ import  Image  from 'next/image';
 import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
-<<<<<<< HEAD
 import NavBar from '../components/navbar';
-import axios from 'axios';
-=======
 import CitySelector from '../components/CitySelector';
 import axios from "axios";
->>>>>>> c964fbcbb862b3820159bc5512287100258cb7e4
 
 
 export default function Home() {
