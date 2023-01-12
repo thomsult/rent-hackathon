@@ -31,7 +31,7 @@ axios
 <main className="flex flex-col relative ">
 <NavBar />
   <div className="mt-10 md:mt-0">
-    <div className="flex phone-[400px]:hidden w-full max-h-64 overflow-hidden">
+    <div className="flex phone:hidden w-full max-h-64 overflow-hidden">
       <img className="bg-cover md:h-full rounded-lg object-cover object-bottom " 
         src="/Home_Image.png"
         alt="Picture of the author"
@@ -58,7 +58,7 @@ axios
     <h2 className="text-3xl font-medium py-4">Available Cars</h2>
 
     
-    <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center w-full px-4 md:px-0 md:mx-8">
+    <div className="flex flex-row md:flex-row gap-4 flex-wrap md:justify-center w-full px-4 md:px-0 md:mx-8">
 
     {!isloading && data && data.map((vh) => <CarsCardBig key={vh.id} vh={vh}/>)}
     </div>
