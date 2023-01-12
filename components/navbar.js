@@ -1,4 +1,6 @@
-import React from "react";
+import React,{useState}from "react";
+
+
 
 
 
@@ -12,16 +14,15 @@ export default function NavBar(){
             <img src='/image1.svg'></img>
         </div>
         <div class="flex gap-5 px-4 py-4">
-            <button type="button" class="bg-yellow-500 px-5 rounded-md max-h-[3em]"><span>Se connecter</span></button>
           <button type="button" class="bg-yellow-500 px-5 rounded-md max-h-[3em]"><span>Inscription</span></button>
           <>
-        {isLoggedIn ? (
-          <button onClick={() => setIsLoggedIn(false)}>Se connecter</button>
+          {isLoggedIn ? (
+          <button onClick={() => setIsLoggedIn(false)}  class="bg-yellow-500 px-5 rounded-md max-h-[3em]">Se connecter</button>
         ) : (
-          <button onClick={() => setIsLoggedIn(true)}>Se deconnecter</button>
+          <button onClick={() => setIsLoggedIn(true)}  class="bg-yellow-500 px-5 rounded-md max-h-[3em]">Se deconnecter</button>
         )}
-        </>
+          </>
           </div>
-      </nav>
-    ),
+          </nav>
+    )
 }
