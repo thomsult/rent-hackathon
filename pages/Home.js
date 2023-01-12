@@ -50,8 +50,7 @@ axios
       />
     </div>
     
-    <div className="flex-row">
-      <CitySelector/>
+    <div className="flex flex-row">
       <DatePicker/>
     </div>
     </div>
