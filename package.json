@@ -9,6 +9,8 @@
     "@heroicons/react": "^2.0.13",
     "axios": "^1.2.2",
     "bluebird": "^3.7.2",
+    "flowbite": "^1.6.1",
+    "flowbite-react": "^0.3.7",
     "mysql2": "^2.3.3",
     "next": "latest",
     "react": "18.2.0",
