@@ -11,21 +11,39 @@ import axios from "axios";
 export default function Home() {
 
   const [data, setData] = useState([])
+  const [Selected, setSelected] = useState([])
   const [isloading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/api/vehicle')
-      .then((res) => {
-        setData(res.data)
-        console.log(res.data)
-        setIsLoading(false)
-      })
-      .catch((err) => {
-        console.log(err)
-      });
+if(!Object.values(Selected).join("")){
+  axios
+  .get(`http://localhost:3000/api/vehicle`)
+  .then((res) => {
+    setData(res.data)
+    console.log(res.data)
+    setIsLoading(false)
+  })
+  .catch((err) => {
+    console.log(err)
+  });
 
-  }, [])
+}else{
+ axios
+  .get("http://localhost:3000/api/vehicle?where&"+Object.keys(Selected).map((el)=>{return el+"="+Selected[el]}).join("&"))
+  .then((res) => {
+    setData(res.data)
+    console.log(res.data)
+    setIsLoading(false)
+  })
+  .catch((err) => {
+    console.log(err)
+  });
+  
+  //console.log(`where&${Object.keys(Selected)[0]}=${Object.values(Selected)[0]}`)
+}
+console.log()
+  }, [Selected])
+//console.log(Object.values(Selected),Object.keys(Selected))
 
   return (
 <main className="flex flex-col relative ">
@@ -54,14 +72,14 @@ export default function Home() {
 
 
       <section className="h-full mt-4  min-h-screen flex flex-row">
-        <Aside />
+        <Aside onChange={(e)=>setSelected({...Selected,...e})}/>
         <div className='flex flex-col w-screen overflow-x-hidden overflow-y-scroll items-center'>
           <h2 className="text-3xl font-medium py-4">Available Cars</h2>
 
 
           <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center w-full px-4 md:px-0 md:mx-8">
 
-            {!isloading && data && data.map((vh) => <CarsCardBig key={vh.id} vh={vh} />)}
+            {!isloading && data && data.map((vh,index) => <CarsCardBig key={index} vh={vh} />)}
           </div>
         </div>
       </section>
