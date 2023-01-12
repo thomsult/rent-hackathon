@@ -30,10 +30,10 @@ axios
   return (
 <main className="h-screen flex flex-col relative">
   <nav className="bg-yellow-500 p-6 px-10 w-full">Najim</nav>
-  <div className="mt-10 md:mt-0">
+  <div className="md:mt-0">
     <div className="flex md:hidden w-full max-h-64 overflow-hidden">
       <img
-      className="bg-cover md:h-full rounded-lg object-cover object-bottom lg:" 
+      className="bg-cover md:h-full object-cover object-bottom" 
         src="/Home_Image.png"
         alt="Picture of the author"
       />
