@@ -31,6 +31,7 @@ axios
 <main className="flex flex-col relative ">
 <NavBar />
   <div className="mt-10 md:mt-0">
+<<<<<<< HEAD
     <div className="flex phone-[400px]:hidden w-full max-h-64 overflow-hidden">
       <img className="bg-cover md:h-full rounded-lg object-cover object-bottom " 
         src="/Home_Image.png"
@@ -39,6 +40,12 @@ axios
     </div>
 
     <div className="flex max-h-44 relative">
+=======
+    <div className="flex md:hidden w-full max-h-24-overflow-hidden">
+    </div>
+
+    <div className="md:hidden md:flex bg-">
+>>>>>>> 95a78b55b82f80983ab815b71e9b33dfb37ddb2a
       <img
       className="w-full object-cover max-h-[33%] bg-[-15rem] absolute " 
         src="/Home_Image.png"

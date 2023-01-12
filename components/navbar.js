@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React,{useState}from "react";
+
 
 
 
@@ -13,13 +15,13 @@ export default function NavBar(){
         <div className="mr-auto">
             <img src='/image1.svg'></img>
         </div>
-        <div class="flex gap-5 px-4 py-4">
-          <button type="button" className="bg-[#F3B33D] px-5 rounded-md max-h-[3em]"><span>Inscription</span></button>
+        <div class="flex gap-5 px-4 py-6">
+          <Link href="/register"className="2xl:bg-[#F3B33D] px-5 rounded-md max-h-[3em] xl: bg-[#F3B33D] px-5 rounded-md max-h-[3em] lg: bg-[#F3B33D] px-5 rounded-md max-h-[3em] md:bg-[#F3B33D] px-5 rounded-md max-h-[3em] sm: bg-[#F3B33D] px-5 py-3 rounded-md max-h-[3em]"><span>Inscription</span></Link>
           <>
-          {isLoggedIn ? (
-          <button onClick={() => setIsLoggedIn(false)}  className="bg-[#F3B33D] px-5 rounded-md max-h-[3em]">Se connecter</button>
+          {!isLoggedIn ? (
+          <Link href="/login" onClick={() => setIsLoggedIn(false)}  className="2xl:bg-[#F3B33D] px-5 rounded-md max-h-[3em] xl: bg-[#F3B33D] px-5 rounded-md max-h-[3em] lg: bg-[#F3B33D] px-5 rounded-md max-h-[3em] md:bg-[#F3B33D] px-5 rounded-md max-h-[3em] sm: bg-[#F3B33D] px-5 py-3 rounded-md max-h-[3em]">Se connecter</Link>
         ) : (
-          <button onClick={() => setIsLoggedIn(true)}  className="bg-bg-[#F3B33D] px-5 rounded-md max-h-[3em]">Se deconnecter</button>
+          <Link href="/" onClick={() => setIsLoggedIn(true)}  className="bg-bg-[#F3B33D] px-5 rounded-md max-h-[3em]">Se deconnecter</Link>
         )}
           </>
           </div>
