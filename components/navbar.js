@@ -9,7 +9,7 @@ function NavBar(){
 <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
   <a href="https://flowbite.com/" class="flex items-center">
-      <img src="logo" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+      <img src="logo" class="h-6 mr-3 sm:h-9" alt="logo" />
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
   </a>
   <div class="flex items-center md:order-2">
