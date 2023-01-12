@@ -2,6 +2,9 @@ import React from 'react';
 import DatePicker from '../components/datePicker';
 import  Image  from 'next/image';
 import {CarsCard} from '../components/Card/CarsCard';
+import Footer from '../components/footer';
+import Aside from '../components/aside';
+
 export default function Home() {
   const data = [{name:"cars"}]
   return (
@@ -27,10 +30,12 @@ export default function Home() {
     </div>
     </div>
     
-    <section className="bg-slate-500 h-full mt-10 px-10 ">
-    <h2 className="text-3xl font-medium mt-4">Available Cars</h2>
-    {data.map((item)=><CarsCard vehicule={item}></CarsCard>)}
+    <section className="h-full  mt-4  min-h-screen flex flex-row">
+    <Aside/>
+    <div><h2 className="text-3xl font-medium mt-4">Available Cars</h2>
+    {data.map((item,index)=><CarsCard key={index} vehicule={item}></CarsCard>)}</div>
     </section>
+    <Footer/>
 </main>
   )
 }
