@@ -1,14 +1,34 @@
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import DatePicker from '../components/datePicker';
 import  Image  from 'next/image';
-import {CarsCard} from '../components/Card/CarsCard';
 import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
+import axios from 'axios';
 
 
 export default function Home() {
-  const data = [{name:"cars"}]
+
+const [data, setData] = useState([])
+const [isloading, setIsLoading] = useState(true)
+
+useEffect(() => {
+axios
+.get('http://localhost:3000/api/vehicle')
+.then((res) => {
+  setData(res.data)
+  console.log(res.data)
+  setIsLoading(false)
+})
+.catch((err) => {
+  console.log(err)
+});
+
+}, [])
+
+
+
+
   return (
 <main className="h-screen flex flex-col relative">
   <nav className="bg-yellow-500 p-6 px-10 w-full">Najim</nav>
@@ -42,15 +62,8 @@ export default function Home() {
 
     
     <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center w-full px-4 md:px-0 md:mx-8">
-    {/* {data.map((item)=><CarsCardBig vehicule={item}></CarsCardBig>)} */}
-    <CarsCardBig/>
-    <CarsCardBig/>
-    <CarsCardBig/>
-    <CarsCardBig/>
-    <CarsCardBig/>
-    <CarsCardBig/>
-    <CarsCardBig/>
 
+    {!isloading && data && data.map((vh) => <CarsCardBig key={vh.id} vh={vh}/>)}
     </div>
     </div>
     </section>
