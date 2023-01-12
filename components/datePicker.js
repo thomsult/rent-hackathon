@@ -7,9 +7,9 @@ function DateRangePicker() {
   const [endDate, setEndDate] = useState(new Date());
 
   return (
-    <div className="w-full text-white bg-black md:pt-4 pb-4 px-8 py-18 mt-5 mr-5 ml-5 rounded-md flex flex-col max-w-screen items-center min-w-screen justify-between lg:flex-row">
+    <div className="w-full text-white bg-black md:pt-4 pb-4 px-8 py-18 mt-5 mr-5 ml-5 rounded-md flex flex-row max-w-screen items-center min-w-screen justify-between md:grid-rows-2 grid-flow-col gap-2">
       <div>
-        <h1>Debut date</h1>
+        <h1>Start date</h1>
         {/* <span>from</span> */}
         <DatePicker className='rounded-md md:mt-5 mb-5 text-black'
           selected={startDate}
