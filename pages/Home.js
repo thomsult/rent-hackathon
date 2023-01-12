@@ -4,6 +4,8 @@ import  Image  from 'next/image';
 import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
+import NavBar from '../components/navbar';
+import CitySelector from '../components/CitySelector';
 import axios from "axios";
 
 
@@ -28,8 +30,8 @@ axios
 
 
   return (
-<main className="h-screen flex flex-col relative">
-  <nav className="bg-yellow-500 p-6 px-10 w-full">Najim</nav>
+<main className="h-screen flex flex-col relative ">
+<NavBar />
   <div className="mt-10 md:mt-0">
     <div className="flex md:hidden w-full max-h-64 overflow-hidden">
       <img
