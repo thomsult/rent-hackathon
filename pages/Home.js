@@ -27,17 +27,20 @@ axios
 
 }, [])
 
-
   return (
-<main className="h-screen flex flex-col relative ">
+<main className="flex flex-col relative ">
 <NavBar />
   <div className="mt-10 md:mt-0">
-    <div className="flex md:hidden w-full max-h-24-overflow-hidden">
+    <div className="flex phone-[400px]:hidden w-full max-h-64 overflow-hidden">
+      <img className="bg-cover md:h-full rounded-lg object-cover object-bottom " 
+        src="/Home_Image.png"
+        alt="Picture of the author"
+      />
     </div>
 
-    <div className="md:hidden md:flex bg-">
+    <div className="flex max-h-44 relative">
       <img
-      className="w-full object-cover object-center max-h-[33%]" 
+      className="w-full object-cover max-h-[33%] bg-[-15rem] absolute " 
         src="/Home_Image.png"
         alt="Picture of the author"
       />
