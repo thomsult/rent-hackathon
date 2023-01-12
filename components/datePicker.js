@@ -44,7 +44,7 @@ function DateRangePicker() {
         <h1>City</h1>
         <input className='rounded-md md:mt-5 mb-5 text-black' type="text" placeholder="Type your city" required id="city" name="city" label="city" autoComplete="city"/>
       </div>
-      <button className="2xl:bg-[#F3B33D] px-5 rounded-md max-h-[3em] xl: bg-[#F3B33D] px-5 rounded-md max-h-[3em] mt-6 bg-[#F3B33D] px-5 rounded-md max-h-[3em] md:bg-[#F3B33D] px-5 rounded-md max-h-[3em] sm: bg-[#F3B33D] px-5 py-3 rounded-md max-h-[3em]" onClick={() => setData}>See the cars</button>
+      <button className="2xl:bg-[#F3B33D] px-5 rounded-md max-h-[3em] xl: bg-[#F3B33D] px-5 rounded-md max-h-[3em] mt-6 bg-[#F3B33D] px-5 rounded-md max-h-[3em] md:bg-[#F3B33D] px-5 rounded-md max-h-[3em] sm: bg-[#F3B33D] px-5 py-3 rounded-md max-h-[3em]" onClick={(data) => setData}>See the cars</button>
     </div>
   );
 }
