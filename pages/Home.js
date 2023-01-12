@@ -5,6 +5,7 @@ import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
 import NavBar from '../components/navbar';
+import axios from 'axios';
 
 
 export default function Home() {
