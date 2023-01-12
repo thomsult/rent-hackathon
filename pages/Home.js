@@ -1,16 +1,36 @@
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import DatePicker from '../components/datePicker';
 import  Image  from 'next/image';
-import {CarsCard} from '../components/Card/CarsCard';
 import { CarsCardBig } from '../components/Card/CarsCardBig';
 import Aside from '../components/aside';
 import Footer from '../components/footer';
+import axios from 'axios';
 
 
 export default function Home() {
-  const data = [{name:"cars"}]
+
+const [data, setData] = useState([])
+const [isloading, setIsLoading] = useState(true)
+
+useEffect(() => {
+axios
+.get('http://localhost:3000/api/vehicle')
+.then((res) => {
+  setData(res.data)
+  console.log(res.data)
+  setIsLoading(false)
+})
+.catch((err) => {
+  console.log(err)
+});
+
+}, [])
+
+
+
+
   return (
-<main className="h-screen flex flex-col relative ">
+<main className="h-screen flex flex-col relative">
   <nav className="bg-yellow-500 p-6 px-10 w-full">Najim</nav>
   <div className="mt-10 md:mt-0">
     <div className="flex md:hidden w-full px-8 max-h-64 overflow-hidden">
@@ -34,12 +54,19 @@ export default function Home() {
     </div>
     </div>
     
-    <section className="h-full mx-8 md:mx-3  mt-4  min-h-screen flex flex-row">
+
+    <section className="h-full mt-4  min-h-screen flex flex-row">
     <Aside/>
-    <div className="flex flex-col"><h2 className="text-3xl font-medium mt-4">Available Cars</h2>
-    {data.map((item,index)=><CarsCard key={index} vehicule={item}></CarsCard>)}
-    {data.map((item)=><CarsCardBig vehicule={item}></CarsCardBig>)}
-    </div></section>
+    <div className='flex flex-col w-screen overflow-x-hidden overflow-y-scroll items-center'>
+    <h2 className="text-3xl font-medium py-4">Available Cars</h2>
+
+    
+    <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center w-full px-4 md:px-0 md:mx-8">
+
+    {!isloading && data && data.map((vh) => <CarsCardBig key={vh.id} vh={vh}/>)}
+    </div>
+    </div>
+    </section>
     
 <Footer/>
 </main>
