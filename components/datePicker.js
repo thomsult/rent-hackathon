@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import LocationContext from '../context/LocationContext';
 
 
 function DateRangePicker() {
@@ -8,6 +9,14 @@ function DateRangePicker() {
   const [endDate, setEndDate] = useState(new Date());
   const [time, setTime] = useState('');
   const [city, setCity] = useState('');
+  const {location, setLocation } = useContext(LocationContext)
+
+  useEffect(() => {
+    setLocation({startDate, endDate})
+    
+
+  }, [startDate, endDate])
+  
   
 
   return (
