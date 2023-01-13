@@ -6,30 +6,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 function DateRangePicker() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-<<<<<<< HEAD
-  
-
-  // const handleSubmit () => {
-  //   useEffect(() => {
-  //     if(id) {
-  //     axios
-  //     .post(`http://localhost:3000/api/vehi`)
-  //     .then((res) => {
-  //       setData(res.data)
-  //       console.log(res.data)
-  //       setIsLoading(false)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })}
-      
-  //     }, [id])
-  // }
-=======
   const [time, setTime] = useState('');
   const [city, setCity] = useState('');
   
->>>>>>> 8d306b3a6b94ceabf69f2e1625a6a487e6d38abf
 
   return (
     <div className="w-full text-white bg-black md:pt-4 pb-4 px-8 py-4 mt-5 lg:rounded-md flex flex-col max-w-screen items-center min-w-screen justify-between lg:flex-row">
