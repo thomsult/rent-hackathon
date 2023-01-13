@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import LocationContext from '../../context/LocationContext';
 
 const Booking = ({ setShowModal, data }) => {
+const {location} = useContext(LocationContext)
+const {startDate, endDate} = location
+console.log(location);
+
     return (
         <div>
         

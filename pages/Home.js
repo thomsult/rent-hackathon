@@ -99,7 +99,7 @@ console.log(query)
           <h2 className="text-3xl font-medium py-4">Available Cars</h2>
 
     
-    <div className="flex flex-row md:flex-row gap-4 flex-wrap md:justify-center w-full px-4 md:px-0 md:mx-8">
+    <div className="flex flex-col lg:flex-row gap-4 flex-wrap md:justify-center w-full px-4 md:px-0 md:mx-8">
 
             {!isloading && data && data.map((vh,index) => <CarsCardBig key={index} vh={vh} />)}
           </div>
