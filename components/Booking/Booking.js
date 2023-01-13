@@ -6,7 +6,6 @@ import LocationContext from '../../context/LocationContext';
 const Booking = ({ setShowModal, data }) => {
 const {location} = useContext(LocationContext)
 const {startDate, endDate} = location
-console.log(location);
 
     return (
         <div>
@@ -54,7 +53,7 @@ console.log(location);
             <div className='w-full h-full p-4 bg-[#f3b33d6d] rounded-xl shadow-md'>
             <div className='flex justify-between'>
             <p class="text-sm italic">3 jours</p>
-            <p class="text-sm italic">598 EUR</p>
+            <p class="text-sm italic">195 EUR</p>
             </div>
             <div className='flex justify-between'>
             <p class="text-sm italic">Assurance</p>
@@ -63,7 +62,7 @@ console.log(location);
             <div className='py-2'></div>
             <div className='flex justify-between'>
             <p class="text-sm font-medium">Prix Total</p>
-            <p class="text-sm font-medium">698 EUR</p>
+            <p class="text-sm font-medium">295 EUR</p>
             </div>
             </div>
             </div>
