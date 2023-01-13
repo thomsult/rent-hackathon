@@ -11,7 +11,6 @@ export default async function handler(req, res) {
   } else {
     const { id } = req.query;
     let data = null;
-    console.log(id);
     try {
       const querySql = `SELECT * FROM vehicle as v LEFT JOIN category as c ON v.category_id = c.category_id
     where v.vehicle_id = ?
