@@ -7,8 +7,6 @@ export default function NavBar(){
   const {user,setUser} = useContext(UserContext);
   const router = useRouter()
 
-  console.log(user)
-
     return(
        <nav className="flex justify-end px-5 bg-white-500 p-3 w-full">
         <div className="mr-auto">

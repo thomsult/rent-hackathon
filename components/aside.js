@@ -5,7 +5,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 
-const Checkbox = ({ inp,Checked }) => {
+const Checkbox = ({ inp,Checked,value }) => {
   return <div key={inp} className="pl-2 flex items-start py-0">
     <div className="flex items-center h-5">
       <input
@@ -14,7 +14,13 @@ const Checkbox = ({ inp,Checked }) => {
         name={inp}
         type="checkbox"
         onChange={(e)=>{
-          e.target.checked?Checked(e.target.name):Checked(null)}}
+          if(e.target.checked == true){
+            Checked(e.target.name,true)
+          }else{
+            Checked(e.target.name,false)
+          }
+        }}
+        checked={value}
         className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
       />
     </div>
@@ -44,7 +50,7 @@ const Slider = ({ inp }) => {
 
 
 
-export default function Aside({onChange}) {
+export default function Aside({onChange,Selected}) {
   const [data, setData] = useState(null)
   const [fieldset, SetFieldset] = useState(null)
 
@@ -100,9 +106,11 @@ export default function Aside({onChange}) {
                         <div className="py-4 ">
                         {item.value.map((inp,index2) => {
                             if (item.type !== "Slider") {
-                              return <Checkbox key={index2} inp={inp} Checked={(e)=>{
-                                onChange({[item.name]:e})
-
+                              return <Checkbox key={index2} inp={inp} 
+                              value={Selected[item.name]?.includes(inp)|| false}
+                              Checked={(e,Checked)=>{
+                                const rest = Selected[item.name]||[]
+                                Checked?onChange({[item.name]:[...rest,e]}):onChange({[item.name]:rest.filter(  i=>i!==e )})
                               }}/>
 
 

@@ -9,25 +9,65 @@ import axios from "axios";
 
 
 export default function Home({props}) {
-
+  const [query ,setQuery] = useState("")
   const [data, setData] = useState([])
   const [Selected, setSelected] = useState([])
   const [isloading, setIsLoading] = useState(true)
 
 useEffect(() => {
-axios
-.get('http://localhost:3000/api/vehicle')
-.then((res) => {
-  setData(res.data)
-  console.log(res.data)
-  setIsLoading(false)
-})
-.catch((err) => {
-  console.log(err)
-});
+  if(query !== "?where&"){
+    axios
+    .get('http://localhost:3000/api/vehicle'+query)
+    .then((res) => {
+      setData(res.data)
+      //console.log(res.data)
+      setIsLoading(false)
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+  }else{
+    axios
+    .get('http://localhost:3000/api/vehicle')
+    .then((res) => {
+      setData(res.data)
+      //console.log(res.data)
+      setIsLoading(false)
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+  }
 
-}, [])
-console.log(props)
+
+}, [query])
+
+useEffect(() => {
+  if(Selected){
+    FilterCars(Selected)
+  }
+}, [Selected])
+
+
+function FilterCars(e){
+  console.log(e)
+  let query = "?where&"
+  const qq = Object.keys(e).map((key)=>{
+    if(e[key].length > 0){
+      return key+"="+[...e[key]].join("&"+key+"=");
+    }else{
+      return ""
+    }
+  })
+  qq.length>0&&setQuery((e)=>query + qq.filter((e)=>e).join("&"))
+  return 
+   
+}
+
+console.log(query)
+
+
+
   return (
 <main className="flex flex-col relative ">
 <NavBar />
@@ -54,7 +94,7 @@ console.log(props)
     
 
       <section className="h-full mt-4  min-h-screen flex flex-row">
-        <Aside onChange={(e)=>setSelected({...Selected,...e})}/>
+        <Aside onChange={(e)=>setSelected({...Selected,...e})} Selected={Selected}/>
         <div className='flex flex-col w-screen overflow-x-hidden overflow-y-scroll items-center'>
           <h2 className="text-3xl font-medium py-4">Available Cars</h2>
 
