@@ -17,7 +17,7 @@ export default function Home({props}) {
 useEffect(() => {
   if(query !== "?where&"){
     axios
-    .get('http://localhost:3000/api/vehicle'+query)
+    .get('https://rent-shark-wild.netlify.app/api/vehicle'+query)
     .then((res) => {
       setData(res.data)
       //console.log(res.data)
@@ -28,7 +28,7 @@ useEffect(() => {
     });
   }else{
     axios
-    .get('http://localhost:3000/api/vehicle')
+    .get('https://rent-shark-wild.netlify.app/api/vehicle')
     .then((res) => {
       setData(res.data)
       //console.log(res.data)

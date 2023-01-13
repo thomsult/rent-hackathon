@@ -15,7 +15,7 @@ export default function register() {
       password: '',
     }
   });
-  const onSubmit = data => axios.post("http://localhost:3000/api/register",data).then((res)=>{
+  const onSubmit = data => axios.post("https://rent-shark-wild.netlify.app/api/register",data).then((res)=>{
     if(res.status === 200){
       console.log(res.data);
       router.push("/login")
