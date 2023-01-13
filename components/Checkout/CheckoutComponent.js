@@ -22,7 +22,7 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
       <div className="bg-white">
         {/* Background color split screen for large screens */}
         <div className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-white" aria-hidden="true" />
-        <div className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-indigo-900" aria-hidden="true" />
+        <div className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-black" aria-hidden="true" />
   
         <header className="relative max-w-7xl mx-auto bg-white py-6 lg:bg-transparent lg:grid lg:grid-cols-2 lg:gap-x-16 lg:px-8 lg:pt-16 lg:pb-10">
           <div className="max-w-2xl mx-auto flex px-4 lg:max-w-lg lg:w-full lg:px-0">
@@ -47,7 +47,7 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
           <section
             aria-labelledby="summary-heading"
-            className="bg-black text-indigo-300 pt-6 pb-12 md:px-10 lg:max-w-lg lg:w-full lg:mx-auto lg:px-0 lg:pt-0 lg:pb-24 lg:bg-transparent lg:row-start-1 lg:col-start-2"
+            className="bg-black text-[#F3B33D] pt-6 pb-12 md:px-10 lg:max-w-lg lg:w-full lg:mx-auto lg:px-0 lg:pt-0 lg:pb-24 lg:bg-transparent lg:row-start-1 lg:col-start-2"
           >
             <div className="max-w-2xl mx-auto px-4 lg:max-w-none lg:px-0">
               <h2 id="summary-heading" className="sr-only">
@@ -56,23 +56,23 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
               <dl>
                 <dt className="text-sm font-medium">Total</dt>
-                <dd className="mt-1 text-3xl font-extrabold text-white">200.00 EUR</dd>
+                <dd className="mt-1 text-3xl font-extrabold text-white">295.00 EUR</dd>
               </dl>
   
               <ul role="list" className="text-sm font-medium divide-y divide-white divide-opacity-10">
                 {products.map((product) => (
                   <li key={product.id} className="flex items-start py-6 space-x-4">
                     <img
-                      src={product.imageSrc}
+                      src="https://res.cloudinary.com/db2sa2bxv/image/upload/v1673452328/Model_3_Pearl_White_Multi-Coat_rjhtdg.webp"
                       alt={product.imageAlt}
                       className="flex-none w-20 h-20 rounded-md object-center object-cover"
                     />
                     <div className="flex-auto space-y-1">
-                      <h3 className="text-white">{product.name}</h3>
-                      <p>{product.color}</p>
-                      <p>{product.size}</p>
+                      <h3 className="text-white">Tesla</h3>
+                      <p>Model 3</p>
+                      <p>Electrique</p>
                     </div>
-                    <p className="flex-none text-base font-medium text-white">200 EUR</p>
+                    <p className="flex-none text-base font-medium text-white">265 EUR</p>
                   </li>
                 ))}
               </ul>
@@ -80,22 +80,22 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
               <dl className="text-sm font-medium space-y-6 border-t border-white border-opacity-10 pt-6">
                 <div className="flex items-center justify-between">
                   <dt>Prix hors option</dt>
-                  <dd>570.00 EUR</dd>
+                  <dd>195.00 EUR</dd>
                 </div>
   
                 <div className="flex items-center justify-between">
                   <dt>Prix journalier</dt>
-                  <dd>25.00 EUR</dd>
+                  <dd>65.00 EUR</dd>
                 </div>
   
                 <div className="flex items-center justify-between">
                   <dt>Assurance</dt>
-                  <dd>47.20 EUR</dd>
+                  <dd>100.00 EUR</dd>
                 </div>
   
                 <div className="flex items-center justify-between border-t border-white border-opacity-10 text-white pt-6">
                   <dt className="text-base">Total</dt>
-                  <dd className="text-base">200.00 EUR</dd>
+                  <dd className="text-base">295.00 EUR</dd>
                 </div>
               </dl>
             </div>

@@ -53,7 +53,7 @@ export function CarsCardBig({ vh }) {
                 {vh.daily_cost} EUR/<span className="text-[grey]">jour</span>
               </h4>
               <Link href={`/vehicle/${vh.vehicle_id}`} className="bg-[#F3B33D] text-white px-4 py-2 rounded-lg ml-4 text-xl font-semibold text-center">
-               <p className="inline-block pt-2">Découvrir</p> 
+               <p className="inline-block pt-2 sm:pb-2">Découvrir</p> 
               </Link>
             </div>
           </div>
