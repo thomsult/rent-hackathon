@@ -8,7 +8,6 @@ const ReqByCategory = async (table,category)=>{
   
 
     const dataAwait = await query({ query: querySql })
-    console.log(dataAwait)
     return  dataAwait.map((el)=>{
         return el[category]
     })

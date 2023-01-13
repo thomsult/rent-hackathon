@@ -5,9 +5,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        phone: "400px",
+        laptop: "1024px",
+      },
+    } 
   },
   plugins: 
-  [require('flowbite/plugin')
+  [require('flowbite/plugin'),
+  require('@tailwindcss/forms')
   ]
 }

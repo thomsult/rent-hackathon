@@ -2,18 +2,28 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import PublicLayout from '../components/PublicLayout'
 import Link from 'next/link'
-
+import axios from "axios"
+import { useRouter } from 'next/router'
 
 export default function register() {
+  const router = useRouter()
   const { register, handleSubmit, setValue,formState: { errors } ,watch} = useForm({
     defaultValues: {
-      userName: '',
+      first_name: '',
+      last_name:'',
       email: '',
       password: '',
     }
   });
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => axios.post("http://localhost:3000/api/register",data).then((res)=>{
+    if(res.status === 200){
+      console.log(res.data);
+      router.push("/login")
 
+    }
+  })
+  
+  
   return (
     <PublicLayout children={undefined}>
         <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
@@ -38,20 +48,38 @@ export default function register() {
           <div className="mt-6">
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <label htmlFor="userName" className="block text-sm font-medium text-gray-700">
-                Nom d'utilisateur
+                <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
+                Prénom
                 </label>
                 <div className="mt-1">
                   <input
-                  id="userName"
+                  id="first_name"
                     type="text"
-                    {...register("userName",{ 
+                    {...register("first_name",{ 
                       required: "Nom d'utilisateur est obligatoire", 
                     })}
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
-                  {errors.userName && <span className="text-sm text-red-700">Ce chant est obligatoire</span>}
+                  {errors.first_name && <span className="text-sm text-red-700">Ce chant est obligatoire</span>}
                 </div>
+                
+              </div>
+              <div>
+                <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
+                Nom de Famille
+                </label>
+                <div className="mt-1">
+                  <input
+                  id="last_name"
+                    type="text"
+                    {...register("last_name",{ 
+                      required: "Nom d'utilisateur est obligatoire", 
+                    })}
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  />
+                  {errors.last_name && <span className="text-sm text-red-700">Ce chant est obligatoire</span>}
+                </div>
+                
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
