@@ -1,9 +1,5 @@
 import React,{useState}from "react";
 
-
-
-
-
 export default function NavBar(){
   
     const [isLoggedIn, setIsLoggedIn] = useState(false);
