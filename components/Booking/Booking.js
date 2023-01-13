@@ -39,14 +39,14 @@ const Booking = ({ setShowModal, data }) => {
           <div class="">
           <img src={data.image_car} alt='voiture' />
           <div className='flex gap-1'>
-          <div className='w-full h-full p-4 bg-slate-50 rounded-xl '>
+          <div className='w-full h-full p-4 bg-slate-50 rounded-xl shadow-md '>
             <p class="text-sm font-medium">{data.brand}</p>
             <p class="text-sm font-medium">{data.model}</p>
             <div className='py-2'></div>
 
             <p class="text-sm font-medium">{data.transmission}, {data.fuel_type}</p>
             </div>
-            <div className='w-full h-full p-4 bg-[#f3b33d6d] rounded-xl '>
+            <div className='w-full h-full p-4 bg-[#f3b33d6d] rounded-xl shadow-md'>
             <div className='flex justify-between'>
             <p class="text-sm italic">3 jours</p>
             <p class="text-sm italic">598 EUR</p>

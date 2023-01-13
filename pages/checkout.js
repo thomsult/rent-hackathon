@@ -1,8 +1,16 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import CheckoutComponent from '../components/Checkout/CheckoutComponent';
 import ModalPaiement from '../components/Checkout/ModalPaiement';
+import axios from 'axios'
 
 const Checkout = () => {
+// useEffect (() => {
+//     axios
+//     .get
+
+
+// }, [])
+
     const [showModal, setShowModal] = useState(false)
     return (
         <div>

@@ -24,7 +24,7 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
         <div className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-white" aria-hidden="true" />
         <div className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-indigo-900" aria-hidden="true" />
   
-        <header className="relative max-w-7xl mx-auto bg-indigo-900 py-6 lg:bg-transparent lg:grid lg:grid-cols-2 lg:gap-x-16 lg:px-8 lg:pt-16 lg:pb-10">
+        <header className="relative max-w-7xl mx-auto bg-white py-6 lg:bg-transparent lg:grid lg:grid-cols-2 lg:gap-x-16 lg:px-8 lg:pt-16 lg:pb-10">
           <div className="max-w-2xl mx-auto flex px-4 lg:max-w-lg lg:w-full lg:px-0">
             <a href="#">
               <span className="sr-only">Workflow</span>
@@ -47,16 +47,16 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
           <section
             aria-labelledby="summary-heading"
-            className="bg-indigo-900 text-indigo-300 pt-6 pb-12 md:px-10 lg:max-w-lg lg:w-full lg:mx-auto lg:px-0 lg:pt-0 lg:pb-24 lg:bg-transparent lg:row-start-1 lg:col-start-2"
+            className="bg-black text-indigo-300 pt-6 pb-12 md:px-10 lg:max-w-lg lg:w-full lg:mx-auto lg:px-0 lg:pt-0 lg:pb-24 lg:bg-transparent lg:row-start-1 lg:col-start-2"
           >
             <div className="max-w-2xl mx-auto px-4 lg:max-w-none lg:px-0">
               <h2 id="summary-heading" className="sr-only">
-                Order summary
+                Résumé de réservation
               </h2>
   
               <dl>
-                <dt className="text-sm font-medium">Amount due</dt>
-                <dd className="mt-1 text-3xl font-extrabold text-white">$232.00</dd>
+                <dt className="text-sm font-medium">Total</dt>
+                <dd className="mt-1 text-3xl font-extrabold text-white">200.00 EUR</dd>
               </dl>
   
               <ul role="list" className="text-sm font-medium divide-y divide-white divide-opacity-10">
@@ -72,30 +72,30 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
                       <p>{product.color}</p>
                       <p>{product.size}</p>
                     </div>
-                    <p className="flex-none text-base font-medium text-white">{product.price}</p>
+                    <p className="flex-none text-base font-medium text-white">200 EUR</p>
                   </li>
                 ))}
               </ul>
   
               <dl className="text-sm font-medium space-y-6 border-t border-white border-opacity-10 pt-6">
                 <div className="flex items-center justify-between">
-                  <dt>Subtotal</dt>
-                  <dd>$570.00</dd>
+                  <dt>Prix hors option</dt>
+                  <dd>570.00 EUR</dd>
                 </div>
   
                 <div className="flex items-center justify-between">
-                  <dt>Shipping</dt>
-                  <dd>$25.00</dd>
+                  <dt>Prix journalier</dt>
+                  <dd>25.00 EUR</dd>
                 </div>
   
                 <div className="flex items-center justify-between">
-                  <dt>Taxes</dt>
-                  <dd>$47.60</dd>
+                  <dt>Assurance</dt>
+                  <dd>47.20 EUR</dd>
                 </div>
   
                 <div className="flex items-center justify-between border-t border-white border-opacity-10 text-white pt-6">
                   <dt className="text-base">Total</dt>
-                  <dd className="text-base">$642.60</dd>
+                  <dd className="text-base">200.00 EUR</dd>
                 </div>
               </dl>
             </div>
@@ -106,19 +106,19 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
             className="py-16 lg:max-w-lg lg:w-full lg:mx-auto lg:pt-0 lg:pb-24 lg:row-start-1 lg:col-start-1"
           >
             <h2 id="payment-and-shipping-heading" className="sr-only">
-              Payment and shipping details
+              Détails de paiement
             </h2>
   
             <form>
               <div className="max-w-2xl mx-auto px-4 lg:max-w-none lg:px-0">
                 <div>
                   <h3 id="contact-info-heading" className="text-lg font-medium text-gray-900">
-                    Contact information
+                    Information
                   </h3>
   
                   <div className="mt-6">
                     <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                      Email address
+                      Email
                     </label>
                     <div className="mt-1">
                       <input
@@ -134,13 +134,13 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
                 <div className="mt-10">
                   <h3 id="payment-heading" className="text-lg font-medium text-gray-900">
-                    Payment details
+                    Information de paiement
                   </h3>
   
                   <div className="mt-6 grid grid-cols-3 sm:grid-cols-4 gap-y-6 gap-x-4">
                     <div className="col-span-3 sm:col-span-4">
                       <label htmlFor="card-number" className="block text-sm font-medium text-gray-700">
-                        Card number
+                        Numéro de carte
                       </label>
                       <div className="mt-1">
                         <input
@@ -155,7 +155,7 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
                     <div className="col-span-2 sm:col-span-3">
                       <label htmlFor="expiration-date" className="block text-sm font-medium text-gray-700">
-                        Expiration date (MM/YY)
+                        Date d'expiration (MM/YY)
                       </label>
                       <div className="mt-1">
                         <input
@@ -187,13 +187,13 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
                 <div className="mt-10">
                   <h3 id="shipping-heading" className="text-lg font-medium text-gray-900">
-                    Shipping address
+                    Information de facturation
                   </h3>
   
                   <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-3">
                     <div className="sm:col-span-3">
                       <label htmlFor="address" className="block text-sm font-medium text-gray-700">
-                        Address
+                        Addresse
                       </label>
                       <div className="mt-1">
                         <input
@@ -208,7 +208,7 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
                     <div>
                       <label htmlFor="city" className="block text-sm font-medium text-gray-700">
-                        City
+                        Ville
                       </label>
                       <div className="mt-1">
                         <input
@@ -223,7 +223,7 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
   
                     <div>
                       <label htmlFor="region" className="block text-sm font-medium text-gray-700">
-                        State / Province
+                        State / Province (US)
                       </label>
                       <div className="mt-1">
                         <input
@@ -253,24 +253,7 @@ export default function CheckoutComponent({ setShowModal, showModal }) {
                   </div>
                 </div>
   
-                <div className="mt-10">
-                  <h3 className="text-lg font-medium text-gray-900">Billing information</h3>
-  
-                  <div className="mt-6 flex items-center">
-                    <input
-                      id="same-as-shipping"
-                      name="same-as-shipping"
-                      type="checkbox"
-                      defaultChecked
-                      className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <div className="ml-2">
-                      <label htmlFor="same-as-shipping" className="text-sm font-medium text-gray-900">
-                        Same as shipping information
-                      </label>
-                    </div>
-                  </div>
-                </div>
+
   
                 <div className="mt-10 flex justify-end pt-6 border-t border-gray-200">
                   <button
