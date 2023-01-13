@@ -59,7 +59,7 @@ export default function Aside({onChange,Selected}) {
 
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/category/all").then((res) => {
+    axios.get("https://rent-shark-wild.netlify.app/api/category/all").then((res) => {
       SetFieldset(Object.keys(res.data).map((el) => {
         if (el === "mileage" || el === "daily_cost") {
           return { name: el, value: [...res.data[el]], type: "Slider" }

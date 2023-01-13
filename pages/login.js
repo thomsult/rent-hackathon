@@ -16,7 +16,7 @@ export default function login() {
       password: '',
     }
   });
-  const onSubmit = data => axios.post("http://localhost:3000/api/login",data).then((res)=>{
+  const onSubmit = data => axios.post("https://rent-shark-wild.netlify.app/api/login",data).then((res)=>{
     setUser(res.data[0])
     console.log(res.data[0])
     router.push("/")

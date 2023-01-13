@@ -24,7 +24,7 @@ const [isloading, setIsLoading] = useState(true)
 useEffect(() => {
     if(id) {
     axios
-    .get(`http://localhost:3000/api/vehicle/${id}`)
+    .get(`https://rent-shark-wild.netlify.app/api/vehicle/${id}`)
     .then((res) => {
       setData(res.data)
       console.log(res.data)
