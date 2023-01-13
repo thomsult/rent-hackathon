@@ -49,27 +49,26 @@ console.log()
 <main className="flex flex-col relative ">
 <NavBar />
   <div className="mt-10 md:mt-0">
-    <div className="flex md:hidden w-full max-h-64 overflow-hidden">
-      <img
-      className="bg-cover md:h-full rounded-lg object-cover object-bottom lg:" 
+    <div className="flex phone:hidden w-full max-h-64 overflow-hidden">
+      <img className="bg-cover md:h-full rounded-lg object-cover object-bottom " 
         src="/Home_Image.png"
         alt="Picture of the author"
       />
     </div>
 
-        <div className="hidden md:flex max-h-[95vh] ">
-          <img
-            className="w-full object-cover object-center max-h-[33%]"
-            src="/Home_Image.png"
-            alt="Picture of the author"
-          />
-        </div>
-
-        <div className=" mx-10 mt-10 md:absolute bg-slate-100 p-4 top-0 md:translate-y-[40vw] lg:translate-y-[40vh] ">
-          <DatePicker />
-        </div>
-      </div>
-
+    <div className="flex max-h-44 relative">
+      <img
+      className="w-full object-cover max-h-[33%] bg-[-15rem] absolute " 
+        src="/Home_Image.png"
+        alt="Picture of the author"
+      />
+    </div>
+    
+    <div className="flex flex-row">
+      <DatePicker/>
+    </div>
+    </div>
+    
 
       <section className="h-full mt-4  min-h-screen flex flex-row">
         <Aside onChange={(e)=>setSelected({...Selected,...e})}/>

@@ -1,12 +1,18 @@
 import { React, useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
-import { Battery100Icon, StarIcon } from "@heroicons/react/24/outline";
+import { Battery100Icon } from "@heroicons/react/24/outline";
 import { CogIcon, UsersIcon, ViewColumnsIcon } from "@heroicons/react/24/solid";
 import axios from 'axios'
 import NavBar from '../../components/navbar';
 import Footer from '../../components/footer';
+import Booking from '../../components/Booking/Booking';
 const carOnePage = () => {
 
+const [showModal, setShowModal] = useState(false)
+
+const handleClick = () => {
+    setShowModal(true)
+}
 
 const router = useRouter()
 const {id} = router.query
@@ -32,6 +38,7 @@ useEffect(() => {
 
     return isloading ? <p>Loading... </p> : (
         <main className="">
+        {showModal && <Booking showModal={showModal} setShowModal={setShowModal} data={data}/>}
         <NavBar />
         <div className="h-full w-full py-4 rounded-xl bg-white px-4">
           <div>
@@ -86,7 +93,7 @@ useEffect(() => {
               <h4 className="text-md font-bold text-[#555555] text-2xl">
                 {data.daily_cost} EUR/<span className="text-[grey]">jour</span>
               </h4>
-              <button className="bg-[#F3B33D] text-white px-4 py-2 rounded-lg ml-4 text-xl lg:text-md font-semibold text-center">
+              <button className="bg-[#F3B33D] text-white px-4 py-2 rounded-lg ml-4 text-xl lg:text-md font-semibold text-center" onClick={handleClick}>
                 Reserver
               </button>
             </div>

@@ -5,11 +5,29 @@ import 'react-datepicker/dist/react-datepicker.css';
 function DateRangePicker() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  
+
+  // const handleSubmit () => {
+  //   useEffect(() => {
+  //     if(id) {
+  //     axios
+  //     .post(`http://localhost:3000/api/vehi`)
+  //     .then((res) => {
+  //       setData(res.data)
+  //       console.log(res.data)
+  //       setIsLoading(false)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })}
+      
+  //     }, [id])
+  // }
 
   return (
     <div className="w-full text-white bg-black md:pt-4 pb-4 px-8 py-18 mt-5 mr-5 ml-5 rounded-md flex flex-col max-w-screen items-center min-w-screen justify-between lg:flex-row">
       <div>
-        <h1>Debut date</h1>
+        <h1>Start date</h1>
         {/* <span>from</span> */}
         <DatePicker className='rounded-md md:mt-5 mb-5 text-black'
           selected={startDate}

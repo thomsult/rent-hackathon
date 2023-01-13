@@ -1,6 +1,7 @@
 import React from "react";
 import { Battery100Icon, StarIcon } from "@heroicons/react/24/outline";
 import { CogIcon, UsersIcon, ViewColumnsIcon } from "@heroicons/react/24/solid";
+import Link from 'next/link' 
 
 export function CarsCardBig({ vh }) {
   return (
@@ -51,15 +52,16 @@ export function CarsCardBig({ vh }) {
               <h4 className="text-md font-bold text-[#555555] text-2xl">
                 {vh.daily_cost} EUR/<span className="text-[grey]">jour</span>
               </h4>
-              <button className="bg-[#F3B33D] text-white px-4 py-2 rounded-lg ml-4 text-xl font-semibold text-center">
-                Reserver
-              </button>
+              <Link href={`/vehicle/${vh.vehicle_id}`} className="bg-[#F3B33D] text-white px-4 py-2 rounded-lg ml-4 text-xl font-semibold text-center">
+               <p className="inline-block pt-2">Découvrir</p> 
+              </Link>
             </div>
           </div>
         </div>
       </div>
-      <div className="sm:hidden block w-full">
-        <div className="py-4 px-4 w-full border-solid border-2  border-[green] rounded-xl bg-white relative">
+      <Link href={`/vehicle/${vh.vehicle_id}`}>
+      <div className="sm:hidden block w-full cursor-pointer">
+        <div className="py-4 px-4 w-full border-solid border-2  border-[#3a3a3a] rounded-xl bg-white relative">
           <div>
             <h1 className=" text-xl font-bold text-[#555555]">{vh.brand} {vh.model}</h1>
             <h2 className="text-lg font-medium text-[#6f6d6d]">{vh.detail}</h2>
@@ -84,6 +86,7 @@ export function CarsCardBig({ vh }) {
           </div>
         </div>
       </div>
+      </Link>
     </>
   );
 }
